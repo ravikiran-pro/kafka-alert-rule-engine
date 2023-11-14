@@ -1,0 +1,17 @@
+{
+  "name": "@crayond_dev/server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Kumaravel Pazhani",
+  "license": "ISC",
+  "dependencies": {
+    "kafka-node": "^5.0.0",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3"
+  }
+}
