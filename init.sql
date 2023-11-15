@@ -44,6 +44,26 @@ CREATE TABLE public.Leave (
     FOREIGN KEY (receiver_id) REFERENCES public.Member(id)
 );
 
+
+CREATE TABLE public.Leave_status (
+    id SERIAL PRIMARY KEY,
+    leave_id SERIAL,
+    status TEXT DEFAULT 'waiting',
+    FOREIGN KEY (leave_id) REFERENCES public.Leave(id)
+);
+
+WITH inserted_leave AS (
+    INSERT INTO public.Leave (sender_id, receiver_id, start_date, end_date, reason)
+    VALUES (3, 2, '2023-11-15', '2023-11-17', 'Fever')
+    RETURNING id
+)
+INSERT INTO public.Leave_status (leave_id, status)
+SELECT id, 'approved'
+FROM inserted_leave;
+
+
+
+
 CREATE TABLE ConnectorConfigurations (
     id SERIAL PRIMARY KEY,
     connector_name VARCHAR(255) NOT NULL,

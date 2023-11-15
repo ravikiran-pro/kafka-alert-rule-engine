@@ -2,7 +2,7 @@ POST http://localhost:8083/connectors
 Content-Type: application/json
 
 {
-  "name": "trigger-connector",
+  "name": "trigger-connector1",
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
     "database.hostname": "postgres",
@@ -11,6 +11,6 @@ Content-Type: application/json
     "database.password": "postgres",
     "database.dbname": "postgres",
     "database.server.name": "trigger",
-    "table.include.list": "public.leave"
+    "table.include.list": "public.leave,public.leave_status"
   }
 }
