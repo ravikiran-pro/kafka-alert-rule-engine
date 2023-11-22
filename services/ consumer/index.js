@@ -5,7 +5,7 @@ const user = new kafka.KafkaClient({
 });
 
 
-const Topics = ['trigger.public.leave', 'trigger.public.leave_status']; // Add your topics here
+const Topics = ['trigger.public.leave', 'trigger.public.leave_status', 'trigger.public.notification']; // Add your topics here
 
 function produce() {
     const producer = new kafka.Producer(user);
